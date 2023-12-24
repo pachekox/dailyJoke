@@ -1,19 +1,28 @@
+var joke
+var punchline
+
 async function getJoke() {
 
-    const response = await fetch('https://official-joke-api.appspot.com/random_joke')
-    const jokes = await response.json()
+    var response = await fetch('https://official-joke-api.appspot.com/random_joke')
+    var jokes = await response.json()
     console.log(jokes)
-    this.joke = jokes.setup
-    this.punchline = jokes.punchline
+    joke = jokes.setup
+    punchline = jokes.punchline
 
     document.getElementById('joke').innerHTML=joke;
     document.getElementById('punchline').innerHTML=punchline;
-    
+    navigator.clipboard.writeText(joke + punchline)
+
+
+
 
 }
 
 // copy a joke to clipboard
 function copyJoke(){
-    return 0
+    navigator.clipboard.writeText(joke + punchline)
+document.getElementById('copied').style.display='block'
+    setTimeout(()=>document.getElementById('copied').style.display='none',5000)
+    console.log(joke)
 }
 window.onload = getJoke;
