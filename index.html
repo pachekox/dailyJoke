@@ -1,0 +1,23 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const url = 'https://official-joke-api.appspot.com/random_joke';
+        async function logMovies() {
+            const response = await fetch('https://official-joke-api.appspot.com/random_joke');
+            const movies = await response.json();
+            console.log(movies);
+            var joke = movies.setup
+            var punchline  = movies.punchline
+        }
+    </script>
+</body>
+
+</html>
