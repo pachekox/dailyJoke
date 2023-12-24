@@ -22,7 +22,7 @@ async function getJoke() {
 function copyJoke(){
     navigator.clipboard.writeText(joke + punchline)
 document.getElementById('copied').style.display='block'
-    setTimeout(()=>document.getElementById('copied').style.display='none',5000)
+    setTimeout(()=>document.getElementById('copied').style.display='none',1000)
     console.log(joke)
 }
 window.onload = getJoke;
