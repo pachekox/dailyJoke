@@ -11,6 +11,8 @@ async function getJoke() {
 
     document.getElementById('joke').innerHTML=joke;
     document.getElementById('punchline').innerHTML=punchline;
+    document.getElementById('copy').style.display='block'
+
     // navigator.clipboard.writeText(joke + punchline)
 
 
